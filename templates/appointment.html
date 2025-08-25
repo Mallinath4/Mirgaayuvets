@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+{% block title %}Book Appointment | MrigaAayuvets{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative h-64 md:h-80 flex items-center justify-center bg-gradient-to-r from-green-500 via-green-400 to-green-600 text-white">
+  <div class="text-center">
+    <h1 class="text-3xl md:text-5xl font-extrabold drop-shadow-lg">Book Appointment</h1>
+    <p class="mt-3 text-lg font-medium text-green-100">We’re here to care for your pets 24/7 🐾</p>
+  </div>
+</section>
+
+<!-- Appointment Info + Form -->
+<main class="max-w-7xl mx-auto px-6 py-16">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl font-extrabold text-gray-800 mb-4 animate-bounce">Schedule Your Appointment</h2>
+    <p class="text-lg text-gray-600">Fill out the form below and we’ll confirm your slot via WhatsApp 📲</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    
+    <!-- Info Section -->
+    <div class="bg-white shadow-lg rounded-2xl p-8 space-y-6 hover:shadow-2xl transition duration-500">
+      <h3 class="text-2xl font-bold text-green-600 mb-4">Why Book With Us?</h3>
+      <p class="text-gray-600">We provide trusted veterinary services at your doorstep. Booking online helps us serve your pets faster and better.</p>
+      <ul class="space-y-3 text-gray-700">
+        <li>✅ Stress-free home visits</li>
+        <li>✅ 24/7 emergency support</li>
+        <li>✅ Personalized nutrition & care</li>
+      </ul>
+
+      <!-- Contact Us Now -->
+      <div class="text-center mt-60">
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Need Immediate Care?</h3>
+        <p class="text-gray-600 mb-5">Contact us now for emergency veterinary services at your doorstep</p>
+        <a href="https://wa.me/918208657969?text=Hello%20Doctor,%20I%20need%20veterinary%20services%20for%20my%20pet.%20Please%20help."
+           target="_blank"
+           class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 inline-block">
+          📞 Contact Us Now
+        </a>
+      </div>
+    </div>
+
+    <!-- Appointment Form -->
+    <div class="bg-white shadow-lg rounded-2xl p-8 hover:shadow-2xl transition duration-500">
+      <form id="appointmentForm" class="space-y-6">
+        <div>
+          <label for="name" class="block text-gray-700 font-semibold">Your Name</label>
+          <input type="text" id="name" name="name" required
+            class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
+        </div>
+
+        <div>
+          <label for="animalName" class="block text-gray-700 font-semibold">Animal's Name</label>
+          <input type="text" id="animalName" name="animalName" required
+            class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
+        </div>
+
+        <div>
+          <label for="animalType" class="block text-gray-700 font-semibold">Animal Type</label>
+          <select id="animalType" name="animalType" required
+            class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
+            <option value="">Select Type</option>
+            <option value="Dog">🐕 Dog</option>
+            <option value="Cat">🐈 Cat</option>
+            <option value="Bird">🐦 Bird</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="age" class="block text-gray-700 font-semibold">Animal's Age</label>
+          <input type="number" id="age" name="age" required
+            class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
+        </div>
+
+        <div>
+          <label for="disease" class="block text-gray-700 font-semibold">Disease / Symptoms</label>
+          <input type="text" id="disease" name="disease" required
+            class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
+        </div>
+
+        <div>
+          <label for="address" class="block text-gray-700 font-semibold">Address</label>
+          <textarea id="address" name="address" rows="3" required
+            class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"></textarea>
+        </div>
+
+        <button type="submit"
+          class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+          📅 Book via WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<!-- WhatsApp Script -->
+<script>
+document.getElementById("appointmentForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let animalName = document.getElementById("animalName").value;
+  let animalType = document.getElementById("animalType").value;
+  let age = document.getElementById("age").value;
+  let disease = document.getElementById("disease").value;
+  let address = document.getElementById("address").value;
+
+  let message = `🐾 *New Appointment Request* 🐾%0A
+👤 Name: ${name}%0A
+🐕 Animal: ${animalType} - ${animalName}%0A
+📅 Age: ${age}%0A
+⚕️ Disease: ${disease}%0A
+🏠 Address: ${address}`;
+
+  // Doctor's WhatsApp number
+  let phone = "918208657969";
+
+  // Open WhatsApp with pre-filled message
+  window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+});
+</script>
+{% endblock %}
