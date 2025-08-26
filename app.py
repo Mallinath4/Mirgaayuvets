@@ -18,7 +18,7 @@ def index():
         })
     return render_template('index.html', services=services)
 
-# Complete blogs_data list for app.py
+# Complete blogs_data list for app.py with all 9 blog posts
 blogs_data = [
     {
         "id": "puppy_proofing",
@@ -277,8 +277,434 @@ blogs_data = [
         <h3>When to Seek Professional Help</h3>
         <p>Consider professional training if you're dealing with aggression, severe anxiety, or if you're not seeing progress with basic training after several weeks of consistent effort.</p>
         """
+    },
+    {
+        "id": "cat_care",
+        "title": "Essential Tips for Keeping Your Cat Happy",
+        "image": "images/img10.jpg",
+        "excerpt": "Cats require specific care and attention. Learn the best ways to care for them...",
+        "content": """
+        <h2>Essential Tips for Keeping Your Cat Happy</h2>
+        <p>Cats are unique creatures with specific needs and behaviors. Understanding what makes your feline friend happy is key to a harmonious relationship and their overall well-being.</p>
+        
+        <h3>Create a Cat-Friendly Environment</h3>
+        <p>Cats need spaces that cater to their natural instincts:</p>
+        <ul>
+            <li><strong>Vertical Space:</strong> Provide cat trees, shelves, or perches for climbing and observing</li>
+            <li><strong>Hiding Spots:</strong> Offer cozy hideaways like cat caves or boxes</li>
+            <li><strong>Scratching Posts:</strong> Multiple posts with different textures and orientations</li>
+            <li><strong>Window Views:</strong> Access to windows for watching outdoor activity</li>
+        </ul>
+        
+        <h3>Proper Litter Box Management</h3>
+        <ul>
+            <li>Rule of thumb: One box per cat plus one extra</li>
+            <li>Scoop daily and change litter regularly</li>
+            <li>Place boxes in quiet, accessible locations</li>
+            <li>Use unscented, clumping litter (most cats prefer)</li>
+            <li>Keep boxes clean - cats are very particular about hygiene</li>
+        </ul>
+        
+        <h3>Feeding and Nutrition</h3>
+        <ul>
+            <li>Provide high-quality cat food appropriate for age and health status</li>
+            <li>Fresh water should always be available</li>
+            <li>Consider multiple feeding stations in multi-cat homes</li>
+            <li>Some cats prefer elevated feeding bowls</li>
+            <li>Monitor portion sizes to prevent obesity</li>
+        </ul>
+        
+        <h3>Mental and Physical Stimulation</h3>
+        <p>Cats need enrichment to prevent boredom and behavioral issues:</p>
+        <ul>
+            <li><strong>Interactive Toys:</strong> Feather wands, laser pointers, puzzle feeders</li>
+            <li><strong>Solo Play:</strong> Mice toys, balls, crinkly toys</li>
+            <li><strong>Hunting Games:</strong> Hide treats or use food-dispensing toys</li>
+            <li><strong>Catnip and Cat Grass:</strong> Safe plants that many cats enjoy</li>
+        </ul>
+        
+        <h3>Social Interaction and Bonding</h3>
+        <ul>
+            <li>Let cats approach you on their terms</li>
+            <li>Learn to read cat body language</li>
+            <li>Provide gentle petting in preferred areas (head, cheeks, behind ears)</li>
+            <li>Talk to your cat - many enjoy conversation</li>
+            <li>Respect your cat's need for alone time</li>
+        </ul>
+        
+        <h3>Health and Grooming</h3>
+        <ul>
+            <li>Regular brushing helps prevent matting and reduces shedding</li>
+            <li>Trim nails every 2-3 weeks</li>
+            <li>Monitor for changes in eating, drinking, or litter box habits</li>
+            <li>Schedule regular vet checkups</li>
+            <li>Watch for signs of stress or illness</li>
+        </ul>
+        
+        <h3>Understanding Cat Communication</h3>
+        <ul>
+            <li><strong>Purring:</strong> Usually contentment, but can also indicate pain</li>
+            <li><strong>Meowing:</strong> Primarily used to communicate with humans</li>
+            <li><strong>Tail Position:</strong> High = confident, low = anxious or upset</li>
+            <li><strong>Slow Blinks:</strong> Sign of trust and affection</li>
+            <li><strong>Kneading:</strong> Shows comfort and contentment</li>
+        </ul>
+        
+        <h3>Common Mistakes to Avoid</h3>
+        <ul>
+            <li>Forcing interaction when cat wants space</li>
+            <li>Punishing natural behaviors like scratching</li>
+            <li>Neglecting regular vet care</li>
+            <li>Using scented litters or harsh cleaners</li>
+            <li>Not providing enough environmental enrichment</li>
+        </ul>
+        """
+    },
+    {
+        "id": "senior_pet_care",
+        "title": "Caring for Senior Pets: What You Need to Know",
+        "image": "images/img6.jpg",
+        "excerpt": "Older pets need special care. Here are tips to keep them comfortable...",
+        "content": """
+        <h2>Caring for Senior Pets: What You Need to Know</h2>
+        <p>As pets age, their needs change significantly. Senior pets require special attention and care modifications to maintain their quality of life and comfort during their golden years.</p>
+        
+        <h3>When is a Pet Considered Senior?</h3>
+        <ul>
+            <li><strong>Small Dogs (under 20 lbs):</strong> 8-10 years</li>
+            <li><strong>Medium Dogs (21-50 lbs):</strong> 7-8 years</li>
+            <li><strong>Large Dogs (51-90 lbs):</strong> 6-7 years</li>
+            <li><strong>Giant Dogs (over 90 lbs):</strong> 5-6 years</li>
+            <li><strong>Cats:</strong> 7-8 years</li>
+        </ul>
+        
+        <h3>Common Age-Related Changes</h3>
+        <p>Understanding normal aging helps you identify when to seek veterinary care:</p>
+        <ul>
+            <li>Decreased activity and mobility</li>
+            <li>Changes in sleep patterns</li>
+            <li>Reduced hearing or vision</li>
+            <li>Gray hair around muzzle and face</li>
+            <li>Weight gain or loss</li>
+            <li>Changes in appetite</li>
+            <li>Increased anxiety or confusion</li>
+        </ul>
+        
+        <h3>Senior-Specific Health Issues</h3>
+        <ul>
+            <li><strong>Arthritis:</strong> Joint pain and stiffness</li>
+            <li><strong>Dental Disease:</strong> More common with age</li>
+            <li><strong>Heart Disease:</strong> Cardiovascular changes</li>
+            <li><strong>Kidney Disease:</strong> Decreased kidney function</li>
+            <li><strong>Diabetes:</strong> Blood sugar regulation issues</li>
+            <li><strong>Cancer:</strong> Higher risk with advancing age</li>
+            <li><strong>Cognitive Dysfunction:</strong> Similar to dementia in humans</li>
+        </ul>
+        
+        <h3>Nutrition for Senior Pets</h3>
+        <ul>
+            <li>Senior-specific diets with adjusted protein and phosphorus levels</li>
+            <li>Omega-3 fatty acids for joint and brain health</li>
+            <li>Antioxidants to support immune function</li>
+            <li>Easily digestible ingredients</li>
+            <li>Weight management formulas if needed</li>
+            <li>Smaller, more frequent meals</li>
+        </ul>
+        
+        <h3>Comfort and Mobility Modifications</h3>
+        <ul>
+            <li><strong>Orthopedic Bedding:</strong> Supportive beds for arthritic joints</li>
+            <li><strong>Ramps or Steps:</strong> Help accessing furniture or cars</li>
+            <li><strong>Non-slip Rugs:</strong> Prevent falls on smooth surfaces</li>
+            <li><strong>Raised Food Bowls:</strong> Easier eating position</li>
+            <li><strong>Litter Box Access:</strong> Lower sides for easier entry (cats)</li>
+            <li><strong>Indoor Warmth:</strong> Senior pets feel cold more easily</li>
+        </ul>
+        
+        <h3>Exercise and Mental Stimulation</h3>
+        <ul>
+            <li>Shorter, more frequent walks instead of long hikes</li>
+            <li>Swimming for low-impact exercise</li>
+            <li>Gentle play sessions</li>
+            <li>Puzzle toys to keep minds active</li>
+            <li>Maintain routine to reduce anxiety</li>
+            <li>Allow more rest time between activities</li>
+        </ul>
+        
+        <h3>Increased Veterinary Care</h3>
+        <ul>
+            <li>Bi-annual checkups instead of annual</li>
+            <li>Regular blood work to monitor organ function</li>
+            <li>Blood pressure monitoring</li>
+            <li>Dental evaluations and cleanings</li>
+            <li>Eye and ear examinations</li>
+            <li>Pain management assessments</li>
+        </ul>
+        
+        <h3>Signs That Require Immediate Veterinary Attention</h3>
+        <ul>
+            <li>Sudden changes in appetite or water consumption</li>
+            <li>Difficulty breathing or persistent coughing</li>
+            <li>Loss of balance or coordination</li>
+            <li>Excessive vocalizing or signs of pain</li>
+            <li>Changes in urination or defecation habits</li>
+            <li>Disorientation or confusion</li>
+            <li>Any sudden behavioral changes</li>
+        </ul>
+        
+        <h3>Quality of Life Considerations</h3>
+        <p>Focus on maintaining your senior pet's comfort and happiness. This may include pain management medications, environmental modifications, and adjusting expectations for activity levels while still providing love and enrichment.</p>
+        """
+    },
+    {
+        "id": "dog_breeds",
+        "title": "Choosing the Right Dog Breed for Your Lifestyle",
+        "image": "images/img8.jpg",
+        "excerpt": "Discover which dog breed suits your lifestyle the best...",
+        "content": """
+        <h2>Choosing the Right Dog Breed for Your Lifestyle</h2>
+        <p>Selecting the right dog breed is one of the most important decisions you'll make as a future pet owner. The perfect match depends on your lifestyle, living situation, and personal preferences.</p>
+        
+        <h3>Key Factors to Consider</h3>
+        <p>Before choosing a breed, honestly assess these aspects of your life:</p>
+        <ul>
+            <li><strong>Activity Level:</strong> How much exercise can you provide daily?</li>
+            <li><strong>Living Space:</strong> Apartment, house with yard, or farm?</li>
+            <li><strong>Time Commitment:</strong> Hours available for training and companionship</li>
+            <li><strong>Experience Level:</strong> First-time owner or experienced handler?</li>
+            <li><strong>Family Situation:</strong> Children, elderly members, other pets?</li>
+            <li><strong>Grooming Commitment:</strong> How much maintenance are you willing to do?</li>
+        </ul>
+        
+        <h3>High-Energy Breeds (Need 2+ hours daily exercise)</h3>
+        <ul>
+            <li><strong>Border Collie:</strong> Extremely intelligent, needs mental stimulation</li>
+            <li><strong>Australian Cattle Dog:</strong> Loyal, protective, needs job to do</li>
+            <li><strong>Jack Russell Terrier:</strong> Small but mighty, needs consistent exercise</li>
+            <li><strong>Weimaraner:</strong> Athletic, needs running partner</li>
+            <li><strong>Belgian Malinois:</strong> Working dog, needs experienced handler</li>
+        </ul>
+        
+        <h3>Moderate-Energy Breeds (1-2 hours daily exercise)</h3>
+        <ul>
+            <li><strong>Golden Retriever:</strong> Family-friendly, trainable, needs regular exercise</li>
+            <li><strong>Labrador Retriever:</strong> Versatile, good with kids, loves water</li>
+            <li><strong>German Shepherd:</strong> Loyal, intelligent, needs consistent training</li>
+            <li><strong>Boxer:</strong> Playful, good with families, needs socialization</li>
+            <li><strong>Standard Poodle:</strong> Intelligent, hypoallergenic, needs grooming</li>
+        </ul>
+        
+        <h3>Low-Energy Breeds (30 minutes - 1 hour daily exercise)</h3>
+        <ul>
+            <li><strong>Bulldog:</strong> Gentle, good apartment dog, heat sensitive</li>
+            <li><strong>Basset Hound:</strong> Calm, good with kids, can be stubborn</li>
+            <li><strong>Cavalier King Charles Spaniel:</strong> Gentle, adaptable, friendly</li>
+            <li><strong>Pug:</strong> Social, good apartment dog, prone to breathing issues</li>
+            <li><strong>Shih Tzu:</strong> Small, friendly, needs regular grooming</li>
+        </ul>
+        
+        <h3>Apartment-Friendly Breeds</h3>
+        <ul>
+            <li>French Bulldog - quiet, low exercise needs</li>
+            <li>Boston Terrier - small, adaptable</li>
+            <li>Cavalier King Charles Spaniel - gentle, moderate size</li>
+            <li>Pug - social, doesn't bark excessively</li>
+            <li>Bichon Frise - small, friendly, hypoallergenic</li>
+        </ul>
+        
+        <h3>Family Dogs (Good with Children)</h3>
+        <ul>
+            <li>Golden Retriever - patient, gentle, trainable</li>
+            <li>Labrador Retriever - friendly, tolerant</li>
+            <li>Beagle - gentle, sturdy, good size for kids</li>
+            <li>Bulldog - patient, gentle nature</li>
+            <li>Collie - protective, gentle, intelligent</li>
+        </ul>
+        
+        <h3>Low-Maintenance Grooming</h3>
+        <ul>
+            <li>Beagle - short coat, minimal grooming</li>
+            <li>Boston Terrier - smooth coat, easy care</li>
+            <li>Boxer - short coat, occasional brushing</li>
+            <li>Whippet - minimal shedding, easy grooming</li>
+            <li>Jack Russell Terrier - wash and wear coat</li>
+        </ul>
+        
+        <h3>Hypoallergenic Breeds</h3>
+        <ul>
+            <li>Poodle (all sizes) - curly, non-shedding coat</li>
+            <li>Portuguese Water Dog - wavy, minimal shedding</li>
+            <li>Bichon Frise - fluffy but hypoallergenic</li>
+            <li>Maltese - silky, non-shedding coat</li>
+            <li>Chinese Crested - mostly hairless</li>
+        </ul>
+        
+        <h3>First-Time Owner Friendly</h3>
+        <ul>
+            <li>Golden Retriever - forgiving, easy to train</li>
+            <li>Cavalier King Charles Spaniel - gentle, adaptable</li>
+            <li>Bichon Frise - friendly, small, trainable</li>
+            <li>Pug - easy-going, social</li>
+            <li>Labrador Retriever - versatile, eager to please</li>
+        </ul>
+        
+        <h3>Red Flags to Avoid</h3>
+        <ul>
+            <li>Choosing based on appearance alone</li>
+            <li>Getting a high-energy breed for a sedentary lifestyle</li>
+            <li>Ignoring grooming requirements</li>
+            <li>Not researching breed-specific health issues</li>
+            <li>Impulse decisions without proper research</li>
+        </ul>
+        
+        <h3>Questions to Ask Yourself</h3>
+        <ul>
+            <li>Can I commit to daily exercise regardless of weather?</li>
+            <li>Am I prepared for 10-15+ years of responsibility?</li>
+            <li>Do I have time for training and socialization?</li>
+            <li>Can I afford veterinary care and quality food?</li>
+            <li>Is everyone in my household on board with getting a dog?</li>
+        </ul>
+        
+        <h3>Final Recommendations</h3>
+        <p>Take time to research thoroughly, meet dogs of your chosen breed, and consider adopting from shelters or breed-specific rescues. The right match will bring years of joy and companionship.</p>
+        """
+    },
+    {
+        "id": "pet_emergencies",
+        "title": "How to Handle Pet Emergencies",
+        "image": "images/img11.jpg",
+        "excerpt": "Knowing how to act in an emergency can save your pet's life...",
+        "content": """
+        <h2>How to Handle Pet Emergencies</h2>
+        <p>Pet emergencies can happen at any time, and knowing how to respond quickly and appropriately can mean the difference between life and death for your beloved companion.</p>
+        
+        <h3>Recognize Emergency Situations</h3>
+        <p>These situations require immediate veterinary attention:</p>
+        <ul>
+            <li><strong>Breathing difficulties:</strong> Gasping, blue gums, excessive panting</li>
+            <li><strong>Unconsciousness:</strong> Not responsive to voice or touch</li>
+            <li><strong>Severe bleeding:</strong> Wounds that won't stop bleeding</li>
+            <li><strong>Seizures:</strong> Convulsions, loss of control</li>
+            <li><strong>Bloat/GDV:</strong> Distended abdomen, retching without vomiting</li>
+            <li><strong>Trauma:</strong> Hit by car, severe falls, animal attacks</li>
+            <li><strong>Poisoning:</strong> Known ingestion of toxic substances</li>
+            <li><strong>Heatstroke:</strong> Excessive panting, drooling, weakness</li>
+        </ul>
+        
+        <h3>Emergency First Aid Basics</h3>
+        <p><strong>For Bleeding:</strong></p>
+        <ul>
+            <li>Apply direct pressure with clean cloth</li>
+            <li>Don't remove embedded objects</li>
+            <li>Elevate the wound if possible</li>
+            <li>Transport to vet immediately</li>
+        </ul>
+        
+        <p><strong>For Choking:</strong></p>
+        <ul>
+            <li>Open mouth and look for visible objects</li>
+            <li>Try to remove with tweezers if visible</li>
+            <li>For small dogs: Hold upside down and give 5 sharp back blows</li>
+            <li>For large dogs: Lift hind legs and give 5 sharp back blows</li>
+            <li>Get to vet immediately even if object is dislodged</li>
+        </ul>
+        
+        <p><strong>For Poisoning:</strong></p>
+        <ul>
+            <li>Contact poison control or emergency vet immediately</li>
+            <li>Never induce vomiting unless specifically instructed</li>
+            <li>Bring the substance container with you</li>
+            <li>Note time of ingestion and amount consumed</li>
+        </ul>
+        
+        <h3>What NOT to Do in Emergencies</h3>
+        <ul>
+            <li>Don't panic - stay calm to help your pet</li>
+            <li>Don't give human medications unless directed by vet</li>
+            <li>Don't induce vomiting unless specifically told to</li>
+            <li>Don't try to treat severe injuries yourself</li>
+            <li>Don't delay seeking professional help</li>
+        </ul>
+        
+        <h3>Emergency Kit Essentials</h3>
+        <p>Keep these items in an easily accessible emergency kit:</p>
+        <ul>
+            <li>Emergency vet and poison control phone numbers</li>
+            <li>Clean towels and gauze pads</li>
+            <li>Medical tape and bandages</li>
+            <li>Digital thermometer (normal temp: 101-102.5°F)</li>
+            <li>Hydrogen peroxide 3% (only use if instructed by vet)</li>
+            <li>Saline solution for flushing wounds</li>
+            <li>Emergency blanket</li>
+            <li>Flashlight</li>
+            <li>Tweezers</li>
+            <li>Current photos of your pet</li>
+        </ul>
+        
+        <h3>Transporting an Injured Pet</h3>
+        <ul>
+            <li>Move carefully to avoid further injury</li>
+            <li>Use a blanket or board as a stretcher for large dogs</li>
+            <li>Small pets can be wrapped in towels</li>
+            <li>Support the head and neck if spinal injury is suspected</li>
+            <li>Have someone call the emergency vet while you travel</li>
+        </ul>
+        
+        <h3>Common Toxic Substances</h3>
+        <p><strong>Foods:</strong> Chocolate, grapes, raisins, onions, garlic, xylitol (artificial sweetener)</p>
+        <p><strong>Plants:</strong> Lilies (cats), azaleas, oleander, sago palm</p>
+        <p><strong>Household items:</strong> Antifreeze, rat poison, cleaning products, medications</p>
+        <p><strong>Other:</strong> Cigarettes, alcohol, caffeine</p>
+        
+        <h3>Heatstroke Prevention and Treatment</h3>
+        <p><strong>Prevention:</strong></p>
+        <ul>
+            <li>Never leave pets in cars</li>
+            <li>Provide shade and water during hot weather</li>
+            <li>Limit exercise during peak heat</li>
+            <li>Watch for early signs: excessive panting, drooling</li>
+        </ul>
+        
+        <p><strong>Treatment:</strong></p>
+        <ul>
+            <li>Move to cool, shaded area immediately</li>
+            <li>Apply cool (not ice cold) water to paws and belly</li>
+            <li>Offer small amounts of cool water</li>
+            <li>Get to emergency vet immediately</li>
+        </ul>
+        
+        <h3>Preparing for Emergencies</h3>
+        <ul>
+            <li>Locate nearest 24-hour emergency vet clinic</li>
+            <li>Save emergency numbers in your phone</li>
+            <li>Know the route to the emergency clinic</li>
+            <li>Keep a spare leash and carrier accessible</li>
+            <li>Ensure your pet's ID tags and microchip info are current</li>
+            <li>Take a pet first aid class</li>
+        </ul>
+        
+        <h3>Important Emergency Contacts</h3>
+        <ul>
+            <li>Your regular veterinarian</li>
+            <li>Nearest 24-hour emergency animal hospital</li>
+            <li>ASPCA Animal Poison Control: (888) 426-4435</li>
+            <li>Pet Poison Helpline: (855) 764-7661</li>
+        </ul>
+        
+        <h3>After the Emergency</h3>
+        <ul>
+            <li>Follow up with your regular vet as directed</li>
+            <li>Monitor your pet closely during recovery</li>
+            <li>Keep emergency clinic records for your regular vet</li>
+            <li>Review what happened to prevent future occurrences</li>
+            <li>Replenish your emergency kit supplies</li>
+        </ul>
+        
+        <h3>Remember</h3>
+        <p>Time is critical in pet emergencies. When in doubt, contact a veterinary professional immediately. It's always better to err on the side of caution when your pet's life may be at stake.</p>
+        """
     }
-    # Add more blog entries as needed...
 ]
 
 # Complete services_data dictionary for app.py
@@ -671,3 +1097,4 @@ def contact():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
