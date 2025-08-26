@@ -72,7 +72,7 @@
         <div class="p-6">
           <h3 class="text-2xl font-semibold mb-2 text-green-600">Grooming</h3>
           <p class="text-gray-600 mb-4">Keep your pet looking fabulous with our at-home grooming services. Bath, trim, and style!</p>
-          <a href="#" class="text-green-500 font-semibold hover:underline">Read More →</a>
+          <a href="{{ url_for('service_detail', service_id='grooming') }}" class="text-green-500 font-semibold hover:underline">Read More →</a>
         </div>
       </div>
 
@@ -84,7 +84,7 @@
         <div class="p-6">
           <h3 class="text-2xl font-semibold mb-2 text-green-600">Nail Trimming</h3>
           <p class="text-gray-600 mb-4">Professional nail trimming service to keep your pet's nails healthy and prevent overgrowth.</p>
-          <a href="#" class="text-green-500 font-semibold hover:underline">Read More →</a>
+          <a href="{{ url_for('service_detail', service_id='nail_trimming') }}" class="text-green-500 font-semibold hover:underline">Read More →</a>
         </div>
       </div>
 
@@ -96,7 +96,7 @@
         <div class="p-6">
           <h3 class="text-2xl font-semibold mb-2 text-green-600">Dental Care</h3>
           <p class="text-gray-600 mb-4">Complete dental checkups and cleaning services to maintain your pet's oral health.</p>
-          <a href="#" class="text-green-500 font-semibold hover:underline">Read More →</a>
+          <a href="{{ url_for('service_detail', service_id='dental_care') }}" class="text-green-500 font-semibold hover:underline">Read More →</a>
         </div>
       </div>
 
@@ -108,7 +108,7 @@
         <div class="p-6">
           <h3 class="text-2xl font-semibold mb-2 text-green-600">Pet X-Ray</h3>
           <p class="text-gray-600 mb-4">Advanced mobile X-ray services at home for accurate diagnosis of internal conditions.</p>
-          <a href="#" class="text-green-500 font-semibold hover:underline">Read More →</a>
+          <a href="{{ url_for('service_detail', service_id='pet_xray') }}" class="text-green-500 font-semibold hover:underline">Read More →</a>
         </div>
       </div>
 
@@ -120,7 +120,7 @@
         <div class="p-6">
           <h3 class="text-2xl font-semibold mb-2 text-green-600">Emergency Care</h3>
           <p class="text-gray-600 mb-4">24/7 emergency veterinary services for urgent pet health situations.</p>
-          <a href="#" class="text-green-500 font-semibold hover:underline">Read More →</a>
+          <a href="{{ url_for('service_detail', service_id='emergency_care') }}" class="text-green-500 font-semibold hover:underline">Read More →</a>
         </div>
       </div>
 
@@ -132,7 +132,7 @@
         <div class="p-6">
           <h3 class="text-2xl font-semibold mb-2 text-green-600">Nutrition Guidance</h3>
           <p class="text-gray-600 mb-4">Personalized nutrition plans and dietary advice for optimal pet health and wellness.</p>
-          <a href="#" class="text-green-500 font-semibold hover:underline">Read More →</a>
+          <a href="{{ url_for('service_detail', service_id='nutrition_guidance') }}" class="text-green-500 font-semibold hover:underline">Read More →</a>
         </div>
       </div>
       
@@ -150,4 +150,5 @@
     </div>
   </div>
 </section>
+
 {% endblock %}
