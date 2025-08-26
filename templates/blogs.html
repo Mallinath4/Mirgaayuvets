@@ -75,7 +75,7 @@
             <div class="p-6">
                 <h3 class="text-xl font-semibold mb-3 hover:text-green-500 transition duration-300">The Ultimate Pet Nutrition Guide</h3>
                 <p class="text-gray-600 mb-4">Learn how to provide a balanced diet for your pet to keep them healthy...</p>
-                <a href="#" class="text-green-500 font-semibold hover:underline">Read More</a>
+                <a href="{{ url_for('blog_detail', blog_id='pet_nutrition') }}" class="text-green-500 font-semibold hover:underline">Read More</a>
             </div>
         </article>
 
@@ -85,7 +85,7 @@
             <div class="p-6">
                 <h3 class="text-xl font-semibold mb-3 hover:text-green-500 transition duration-300">Top 5 Dog Training Tips for Beginners</h3>
                 <p class="text-gray-600 mb-4">Training your dog doesn't have to be stressful. Follow these expert tips...</p>
-                <a href="#" class="text-green-500 font-semibold hover:underline">Read More</a>
+                <a href="{{ url_for('blog_detail', blog_id='dog_training') }}" class="text-green-500 font-semibold hover:underline">Read More</a>
             </div>
         </article>
 
@@ -95,7 +95,7 @@
             <div class="p-6">
                 <h3 class="text-xl font-semibold mb-3 hover:text-green-500 transition duration-300">Essential Tips for Keeping Your Cat Happy</h3>
                 <p class="text-gray-600 mb-4">Cats require specific care and attention. Learn the best ways to care for them...</p>
-                <a href="#" class="text-green-500 font-semibold hover:underline">Read More</a>
+                <a href="{{ url_for('blog_detail', blog_id='cat_care') }}" class="text-green-500 font-semibold hover:underline">Read More</a>
             </div>
         </article>
 
@@ -105,7 +105,7 @@
             <div class="p-6">
                 <h3 class="text-xl font-semibold mb-3 hover:text-green-500 transition duration-300">Caring for Senior Pets: What You Need to Know</h3>
                 <p class="text-gray-600 mb-4">Older pets need special care. Here are tips to keep them comfortable...</p>
-                <a href="#" class="text-green-500 font-semibold hover:underline">Read More</a>
+                <a href="{{ url_for('blog_detail', blog_id='senior_pet_care') }}" class="text-green-500 font-semibold hover:underline">Read More</a>
             </div>
         </article>
 
@@ -115,7 +115,7 @@
             <div class="p-6">
                 <h3 class="text-xl font-semibold mb-3 hover:text-green-500 transition duration-300">Choosing the Right Dog Breed for Your Lifestyle</h3>
                 <p class="text-gray-600 mb-4">Discover which dog breed suits your lifestyle the best...</p>
-                <a href="#" class="text-green-500 font-semibold hover:underline">Read More</a>
+                <a href="{{ url_for('blog_detail', blog_id='dog_breeds') }}" class="text-green-500 font-semibold hover:underline">Read More</a>
             </div>
         </article>
 
@@ -125,7 +125,7 @@
             <div class="p-6">
                 <h3 class="text-xl font-semibold mb-3 hover:text-green-500 transition duration-300">How to Handle Pet Emergencies</h3>
                 <p class="text-gray-600 mb-4">Knowing how to act in an emergency can save your pet's life...</p>
-                <a href="#" class="text-green-500 font-semibold hover:underline">Read More</a>
+                <a href="{{ url_for('blog_detail', blog_id='pet_emergencies') }}" class="text-green-500 font-semibold hover:underline">Read More</a>
             </div>
         </article>
 
@@ -134,3 +134,4 @@
 
 
 {% endblock %}
+
