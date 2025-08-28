@@ -1,5 +1,7 @@
-from flask import Flask, render_template, url_for
+from os import abort
 import os
+from flask import Flask, render_template, url_for
+
 app = Flask(__name__)
 
 # Home page
@@ -18,694 +20,64 @@ def index():
         })
     return render_template('index.html', services=services)
 
-# Complete blogs_data list for app.py with all 9 blog posts
-blogs_data = [
-    {
+blogs_data = {
+   "puppy_proofing": {
         "id": "puppy_proofing",
         "title": "10 Essential Puppy Proofing Tips from SKvets",
         "image": "images/puppy.jpeg",
         "excerpt": "Create a safe and friendly environment for your new best friend...",
-        "content": """
-        <h2>10 Essential Puppy Proofing Tips from SKvets</h2>
-        <p>Bringing a new puppy home is exciting, but it requires careful preparation to ensure their safety. Here are our top 10 tips for creating a puppy-safe environment.</p>
-        
-        <h3>1. Secure Electrical Cords</h3>
-        <p>Puppies love to chew, and electrical cords can be dangerous. Use cord protectors or keep them out of reach. Consider using bitter apple spray as a deterrent.</p>
-        
-        <h3>2. Remove Toxic Plants</h3>
-        <p>Many common houseplants are toxic to dogs, including lilies, azaleas, and sago palms. Research and remove any dangerous plants from your home.</p>
-        
-        <h3>3. Lock Cabinets</h3>
-        <p>Install child-proof locks on cabinets containing cleaning supplies, medications, or other harmful substances. Puppies are curious and can get into trouble quickly.</p>
-        
-        <h3>4. Secure Trash Cans</h3>
-        <p>Use tight-fitting lids or store trash cans in secured areas to prevent your puppy from getting into garbage, which can contain harmful foods or objects.</p>
-        
-        <h3>5. Check for Small Objects</h3>
-        <p>Remove small items that could be choking hazards, including coins, jewelry, small toys, and buttons. Regularly scan floors and low surfaces.</p>
-        
-        <h3>6. Install Baby Gates</h3>
-        <p>Use baby gates to restrict access to stairs or certain rooms until your puppy is trained and mature enough to handle these areas safely.</p>
-        
-        <h3>7. Secure Windows and Balconies</h3>
-        <p>Ensure windows have secure screens and balconies have appropriate barriers to prevent falls.</p>
-        
-        <h3>8. Store Food Safely</h3>
-        <p>Keep human food, especially chocolate, grapes, onions, and other toxic foods, safely stored away from curious puppies.</p>
-        
-        <h3>9. Check Your Yard</h3>
-        <p>Remove toxic plants, secure fencing, and eliminate any small objects or chemicals that could harm your puppy during outdoor play.</p>
-        
-        <h3>10. Create a Safe Space</h3>
-        <p>Designate a puppy-safe room or area where your new friend can stay when unsupervised, complete with food, water, toys, and a comfortable bed.</p>
-        """
+        "file": "blogs/puppy_proofing.html"
     },
-    {
-        "id": "puppy_care",
+    "puppy_care":{ 
         "title": "How to take care of your Puppy and feed them?",
         "image": "images/Maltese Dog 1.png",
         "excerpt": "The first week of the puppies' lives is the most critical to their survival...",
-        "content": """
-        <h2>Complete Guide to Puppy Care and Feeding</h2>
-        <p>The first few weeks and months of a puppy's life are crucial for their development and long-term health. Here's your comprehensive guide to proper puppy care.</p>
-        
-        <h3>Feeding Schedule by Age</h3>
-        <p><strong>8-12 weeks:</strong> Feed 4 times per day<br>
-        <strong>3-6 months:</strong> Feed 3 times per day<br>
-        <strong>6+ months:</strong> Feed 2 times per day</p>
-        
-        <h3>Choosing the Right Food</h3>
-        <ul>
-            <li>Select high-quality puppy food appropriate for your dog's expected adult size</li>
-            <li>Look for AAFCO certification on the label</li>
-            <li>Avoid foods with excessive fillers or by-products</li>
-            <li>Consult your veterinarian for specific recommendations</li>
-        </ul>
-        
-        <h3>Feeding Guidelines</h3>
-        <ul>
-            <li>Feed at consistent times each day</li>
-            <li>Use measuring cups for accurate portions</li>
-            <li>Provide fresh water at all times</li>
-            <li>Monitor your puppy's weight and adjust portions as needed</li>
-        </ul>
-        
-        <h3>Early Healthcare Needs</h3>
-        <ul>
-            <li>First vet visit within 48 hours of bringing puppy home</li>
-            <li>Begin vaccination series at 6-8 weeks</li>
-            <li>Start deworming protocol</li>
-            <li>Discuss spay/neuter timing</li>
-        </ul>
-        
-        <h3>Socialization and Training</h3>
-        <p>Early socialization is critical. Expose your puppy to various people, sounds, and experiences in a safe, controlled manner during the first 16 weeks.</p>
-        
-        <h3>Creating a Routine</h3>
-        <p>Establish consistent schedules for feeding, potty breaks, playtime, and sleep to help your puppy feel secure and aid in house training.</p>
-        """
+        "file": "blogs/puppy_care.html"
     },
-    {
-        "id": "vet_checkups",
+    "vet_checkups":{
         "title": "Why Regular Veterinary Checkups are Important",
         "image": "images/img2.jpg",
         "excerpt": "Routine vet visits ensure your pet's long-term health and well-being...",
-        "content": """
-        <h2>The Importance of Regular Veterinary Checkups</h2>
-        <p>Regular veterinary visits are one of the most important things you can do for your pet's health and longevity. Here's why consistent healthcare matters.</p>
-        
-        <h3>Early Detection of Health Issues</h3>
-        <p>Many serious health conditions don't show obvious symptoms until they're advanced. Regular checkups allow veterinarians to:</p>
-        <ul>
-            <li>Detect problems before they become serious</li>
-            <li>Monitor changes in your pet's condition</li>
-            <li>Identify risk factors for future issues</li>
-            <li>Perform diagnostic tests when needed</li>
-        </ul>
-        
-        <h3>Preventive Care Benefits</h3>
-        <ul>
-            <li><strong>Vaccinations:</strong> Protect against serious diseases</li>
-            <li><strong>Parasite Prevention:</strong> Control fleas, ticks, and worms</li>
-            <li><strong>Dental Care:</strong> Prevent dental disease and related problems</li>
-            <li><strong>Weight Management:</strong> Prevent obesity-related health issues</li>
-        </ul>
-        
-        <h3>Recommended Checkup Schedule</h3>
-        <ul>
-            <li><strong>Puppies/Kittens:</strong> Every 3-4 weeks until 16 weeks old</li>
-            <li><strong>Adult Pets (1-7 years):</strong> Once per year</li>
-            <li><strong>Senior Pets (7+ years):</strong> Every 6 months</li>
-            <li><strong>Pets with Chronic Conditions:</strong> As recommended by veterinarian</li>
-        </ul>
-        
-        <h3>What to Expect During a Checkup</h3>
-        <ul>
-            <li>Physical examination from nose to tail</li>
-            <li>Weight and body condition assessment</li>
-            <li>Vaccination updates as needed</li>
-            <li>Parasite screening and prevention</li>
-            <li>Discussion of diet and behavior</li>
-            <li>Dental evaluation</li>
-        </ul>
-        
-        <h3>Cost-Effectiveness of Preventive Care</h3>
-        <p>While regular checkups require an investment, they're much more cost-effective than treating serious diseases that could have been prevented or caught early.</p>
-        
-        <h3>Building a Relationship with Your Vet</h3>
-        <p>Regular visits help your veterinarian understand your pet's normal baseline, making it easier to detect changes and provide personalized care recommendations.</p>
-        """
+        "file": "blogs/vet_checkups.html"
     },
-    {
-        "id": "pet_nutrition",
+    "pet_nutrition":{
         "title": "The Ultimate Pet Nutrition Guide",
         "image": "images/img4.jpg",
         "excerpt": "Learn how to provide a balanced diet for your pet to keep them healthy...",
-        "content": """
-        <h2>The Ultimate Pet Nutrition Guide</h2>
-        <p>Proper nutrition is the foundation of your pet's health. Understanding your pet's nutritional needs helps ensure a long, healthy, and happy life.</p>
-        
-        <h3>Basic Nutritional Requirements</h3>
-        <p>All pets need six basic nutrients:</p>
-        <ul>
-            <li><strong>Water:</strong> Most important nutrient - always provide fresh, clean water</li>
-            <li><strong>Protein:</strong> Essential for growth and tissue repair</li>
-            <li><strong>Carbohydrates:</strong> Provide energy and fiber</li>
-            <li><strong>Fats:</strong> Essential fatty acids and energy source</li>
-            <li><strong>Vitamins:</strong> Support various body functions</li>
-            <li><strong>Minerals:</strong> Support bone health and metabolic processes</li>
-        </ul>
-        
-        <h3>Life Stage Nutrition</h3>
-        <p><strong>Puppy/Kitten:</strong> High-calorie, nutrient-dense food for rapid growth<br>
-        <strong>Adult:</strong> Balanced maintenance diet based on activity level<br>
-        <strong>Senior:</strong> Easily digestible food, often with joint support</p>
-        
-        <h3>Reading Pet Food Labels</h3>
-        <ul>
-            <li>Look for AAFCO nutritional adequacy statement</li>
-            <li>Check the ingredient list - first few ingredients are most important</li>
-            <li>Understand guaranteed analysis percentages</li>
-            <li>Consider your pet's specific needs (size, age, activity level)</li>
-        </ul>
-        
-        <h3>Common Feeding Mistakes</h3>
-        <ul>
-            <li>Overfeeding - leading cause of obesity</li>
-            <li>Too many treats (should be less than 10% of daily calories)</li>
-            <li>Feeding human food without knowing what's safe</li>
-            <li>Sudden diet changes without gradual transition</li>
-            <li>Free-feeding instead of measured portions</li>
-        </ul>
-        
-        <h3>Special Dietary Considerations</h3>
-        <ul>
-            <li><strong>Food Allergies:</strong> May require elimination diets</li>
-            <li><strong>Weight Management:</strong> Controlled portions and exercise</li>
-            <li><strong>Medical Conditions:</strong> Prescription diets may be necessary</li>
-            <li><strong>Active Pets:</strong> May need higher calorie density</li>
-        </ul>
-        
-        <h3>When to Consult a Veterinarian</h3>
-        <p>Consult your vet about nutrition if your pet has changes in appetite, weight, energy level, or if you're considering a diet change for health reasons.</p>
-        """
+        "file": "blogs/pet_nutrition.html"
     },
-    {
-        "id": "dog_training",
+    "dog_training":{
         "title": "Top 5 Dog Training Tips for Beginners",
         "image": "images/img5.jpg",
         "excerpt": "Training your dog doesn't have to be stressful. Follow these expert tips...",
-        "content": """
-        <h2>Top 5 Dog Training Tips for Beginners</h2>
-        <p>Training your dog doesn't have to be overwhelming. With patience, consistency, and the right approach, you can build a strong bond while teaching essential skills.</p>
-        
-        <h3>1. Start with Positive Reinforcement</h3>
-        <p>Reward good behavior immediately with treats, praise, or play. This creates positive associations and encourages your dog to repeat desired behaviors.</p>
-        <ul>
-            <li>Use high-value treats your dog loves</li>
-            <li>Time rewards perfectly - within seconds of good behavior</li>
-            <li>Be enthusiastic with praise</li>
-            <li>Avoid punishment-based methods</li>
-        </ul>
-        
-        <h3>2. Be Consistent with Commands</h3>
-        <p>Use the same word for each command every time. If you use "sit" once, don't switch to "sit down" later.</p>
-        <ul>
-            <li>Choose simple, clear commands</li>
-            <li>Ensure all family members use the same words</li>
-            <li>Practice commands in different locations</li>
-            <li>Be patient - repetition is key</li>
-        </ul>
-        
-        <h3>3. Keep Training Sessions Short</h3>
-        <p>Dogs have short attention spans. Multiple 5-10 minute sessions throughout the day are more effective than one long session.</p>
-        <ul>
-            <li>End on a positive note</li>
-            <li>Practice 2-3 times daily</li>
-            <li>Stop if your dog seems tired or frustrated</li>
-            <li>Make training fun and engaging</li>
-        </ul>
-        
-        <h3>4. Master the Basics First</h3>
-        <p>Focus on essential commands before moving to advanced tricks:</p>
-        <ul>
-            <li><strong>Sit:</strong> Foundation for many other commands</li>
-            <li><strong>Stay:</strong> Teaches impulse control</li>
-            <li><strong>Come:</strong> Essential for safety</li>
-            <li><strong>Down:</strong> Helps with relaxation and control</li>
-            <li><strong>Leave it:</strong> Prevents unwanted behaviors</li>
-        </ul>
-        
-        <h3>5. Socialize Early and Often</h3>
-        <p>Expose your dog to various people, animals, sounds, and environments in a positive way, especially during the critical socialization period (3-14 weeks).</p>
-        <ul>
-            <li>Start slowly with less overwhelming situations</li>
-            <li>Watch your dog's body language</li>
-            <li>Reward calm, confident behavior</li>
-            <li>Never force interactions</li>
-        </ul>
-        
-        <h3>Common Training Mistakes to Avoid</h3>
-        <ul>
-            <li>Inconsistent rules and expectations</li>
-            <li>Inadvertently rewarding bad behavior</li>
-            <li>Getting frustrated or losing patience</li>
-            <li>Skipping socialization</li>
-            <li>Expecting too much too quickly</li>
-        </ul>
-        
-        <h3>When to Seek Professional Help</h3>
-        <p>Consider professional training if you're dealing with aggression, severe anxiety, or if you're not seeing progress with basic training after several weeks of consistent effort.</p>
-        """
+        "file": "blogs/dog_training.html"
     },
-    {
-        "id": "cat_care",
+    "cat_care":{
         "title": "Essential Tips for Keeping Your Cat Happy",
         "image": "images/img10.jpg",
         "excerpt": "Cats require specific care and attention. Learn the best ways to care for them...",
-        "content": """
-        <h2>Essential Tips for Keeping Your Cat Happy</h2>
-        <p>Cats are unique creatures with specific needs and behaviors. Understanding what makes your feline friend happy is key to a harmonious relationship and their overall well-being.</p>
-        
-        <h3>Create a Cat-Friendly Environment</h3>
-        <p>Cats need spaces that cater to their natural instincts:</p>
-        <ul>
-            <li><strong>Vertical Space:</strong> Provide cat trees, shelves, or perches for climbing and observing</li>
-            <li><strong>Hiding Spots:</strong> Offer cozy hideaways like cat caves or boxes</li>
-            <li><strong>Scratching Posts:</strong> Multiple posts with different textures and orientations</li>
-            <li><strong>Window Views:</strong> Access to windows for watching outdoor activity</li>
-        </ul>
-        
-        <h3>Proper Litter Box Management</h3>
-        <ul>
-            <li>Rule of thumb: One box per cat plus one extra</li>
-            <li>Scoop daily and change litter regularly</li>
-            <li>Place boxes in quiet, accessible locations</li>
-            <li>Use unscented, clumping litter (most cats prefer)</li>
-            <li>Keep boxes clean - cats are very particular about hygiene</li>
-        </ul>
-        
-        <h3>Feeding and Nutrition</h3>
-        <ul>
-            <li>Provide high-quality cat food appropriate for age and health status</li>
-            <li>Fresh water should always be available</li>
-            <li>Consider multiple feeding stations in multi-cat homes</li>
-            <li>Some cats prefer elevated feeding bowls</li>
-            <li>Monitor portion sizes to prevent obesity</li>
-        </ul>
-        
-        <h3>Mental and Physical Stimulation</h3>
-        <p>Cats need enrichment to prevent boredom and behavioral issues:</p>
-        <ul>
-            <li><strong>Interactive Toys:</strong> Feather wands, laser pointers, puzzle feeders</li>
-            <li><strong>Solo Play:</strong> Mice toys, balls, crinkly toys</li>
-            <li><strong>Hunting Games:</strong> Hide treats or use food-dispensing toys</li>
-            <li><strong>Catnip and Cat Grass:</strong> Safe plants that many cats enjoy</li>
-        </ul>
-        
-        <h3>Social Interaction and Bonding</h3>
-        <ul>
-            <li>Let cats approach you on their terms</li>
-            <li>Learn to read cat body language</li>
-            <li>Provide gentle petting in preferred areas (head, cheeks, behind ears)</li>
-            <li>Talk to your cat - many enjoy conversation</li>
-            <li>Respect your cat's need for alone time</li>
-        </ul>
-        
-        <h3>Health and Grooming</h3>
-        <ul>
-            <li>Regular brushing helps prevent matting and reduces shedding</li>
-            <li>Trim nails every 2-3 weeks</li>
-            <li>Monitor for changes in eating, drinking, or litter box habits</li>
-            <li>Schedule regular vet checkups</li>
-            <li>Watch for signs of stress or illness</li>
-        </ul>
-        
-        <h3>Understanding Cat Communication</h3>
-        <ul>
-            <li><strong>Purring:</strong> Usually contentment, but can also indicate pain</li>
-            <li><strong>Meowing:</strong> Primarily used to communicate with humans</li>
-            <li><strong>Tail Position:</strong> High = confident, low = anxious or upset</li>
-            <li><strong>Slow Blinks:</strong> Sign of trust and affection</li>
-            <li><strong>Kneading:</strong> Shows comfort and contentment</li>
-        </ul>
-        
-        <h3>Common Mistakes to Avoid</h3>
-        <ul>
-            <li>Forcing interaction when cat wants space</li>
-            <li>Punishing natural behaviors like scratching</li>
-            <li>Neglecting regular vet care</li>
-            <li>Using scented litters or harsh cleaners</li>
-            <li>Not providing enough environmental enrichment</li>
-        </ul>
-        """
+        "file": "blogs/cat_care.html"
     },
-    {
-        "id": "senior_pet_care",
+    "senior_pet_care":{
         "title": "Caring for Senior Pets: What You Need to Know",
         "image": "images/img6.jpg",
         "excerpt": "Older pets need special care. Here are tips to keep them comfortable...",
-        "content": """
-        <h2>Caring for Senior Pets: What You Need to Know</h2>
-        <p>As pets age, their needs change significantly. Senior pets require special attention and care modifications to maintain their quality of life and comfort during their golden years.</p>
-        
-        <h3>When is a Pet Considered Senior?</h3>
-        <ul>
-            <li><strong>Small Dogs (under 20 lbs):</strong> 8-10 years</li>
-            <li><strong>Medium Dogs (21-50 lbs):</strong> 7-8 years</li>
-            <li><strong>Large Dogs (51-90 lbs):</strong> 6-7 years</li>
-            <li><strong>Giant Dogs (over 90 lbs):</strong> 5-6 years</li>
-            <li><strong>Cats:</strong> 7-8 years</li>
-        </ul>
-        
-        <h3>Common Age-Related Changes</h3>
-        <p>Understanding normal aging helps you identify when to seek veterinary care:</p>
-        <ul>
-            <li>Decreased activity and mobility</li>
-            <li>Changes in sleep patterns</li>
-            <li>Reduced hearing or vision</li>
-            <li>Gray hair around muzzle and face</li>
-            <li>Weight gain or loss</li>
-            <li>Changes in appetite</li>
-            <li>Increased anxiety or confusion</li>
-        </ul>
-        
-        <h3>Senior-Specific Health Issues</h3>
-        <ul>
-            <li><strong>Arthritis:</strong> Joint pain and stiffness</li>
-            <li><strong>Dental Disease:</strong> More common with age</li>
-            <li><strong>Heart Disease:</strong> Cardiovascular changes</li>
-            <li><strong>Kidney Disease:</strong> Decreased kidney function</li>
-            <li><strong>Diabetes:</strong> Blood sugar regulation issues</li>
-            <li><strong>Cancer:</strong> Higher risk with advancing age</li>
-            <li><strong>Cognitive Dysfunction:</strong> Similar to dementia in humans</li>
-        </ul>
-        
-        <h3>Nutrition for Senior Pets</h3>
-        <ul>
-            <li>Senior-specific diets with adjusted protein and phosphorus levels</li>
-            <li>Omega-3 fatty acids for joint and brain health</li>
-            <li>Antioxidants to support immune function</li>
-            <li>Easily digestible ingredients</li>
-            <li>Weight management formulas if needed</li>
-            <li>Smaller, more frequent meals</li>
-        </ul>
-        
-        <h3>Comfort and Mobility Modifications</h3>
-        <ul>
-            <li><strong>Orthopedic Bedding:</strong> Supportive beds for arthritic joints</li>
-            <li><strong>Ramps or Steps:</strong> Help accessing furniture or cars</li>
-            <li><strong>Non-slip Rugs:</strong> Prevent falls on smooth surfaces</li>
-            <li><strong>Raised Food Bowls:</strong> Easier eating position</li>
-            <li><strong>Litter Box Access:</strong> Lower sides for easier entry (cats)</li>
-            <li><strong>Indoor Warmth:</strong> Senior pets feel cold more easily</li>
-        </ul>
-        
-        <h3>Exercise and Mental Stimulation</h3>
-        <ul>
-            <li>Shorter, more frequent walks instead of long hikes</li>
-            <li>Swimming for low-impact exercise</li>
-            <li>Gentle play sessions</li>
-            <li>Puzzle toys to keep minds active</li>
-            <li>Maintain routine to reduce anxiety</li>
-            <li>Allow more rest time between activities</li>
-        </ul>
-        
-        <h3>Increased Veterinary Care</h3>
-        <ul>
-            <li>Bi-annual checkups instead of annual</li>
-            <li>Regular blood work to monitor organ function</li>
-            <li>Blood pressure monitoring</li>
-            <li>Dental evaluations and cleanings</li>
-            <li>Eye and ear examinations</li>
-            <li>Pain management assessments</li>
-        </ul>
-        
-        <h3>Signs That Require Immediate Veterinary Attention</h3>
-        <ul>
-            <li>Sudden changes in appetite or water consumption</li>
-            <li>Difficulty breathing or persistent coughing</li>
-            <li>Loss of balance or coordination</li>
-            <li>Excessive vocalizing or signs of pain</li>
-            <li>Changes in urination or defecation habits</li>
-            <li>Disorientation or confusion</li>
-            <li>Any sudden behavioral changes</li>
-        </ul>
-        
-        <h3>Quality of Life Considerations</h3>
-        <p>Focus on maintaining your senior pet's comfort and happiness. This may include pain management medications, environmental modifications, and adjusting expectations for activity levels while still providing love and enrichment.</p>
-        """
+        "file": "blogs/senior_pet_care.html"
     },
-    {
-        "id": "dog_breeds",
+    "dog_breeds":{
         "title": "Choosing the Right Dog Breed for Your Lifestyle",
         "image": "images/img8.jpg",
         "excerpt": "Discover which dog breed suits your lifestyle the best...",
-        "content": """
-        <h2>Choosing the Right Dog Breed for Your Lifestyle</h2>
-        <p>Selecting the right dog breed is one of the most important decisions you'll make as a future pet owner. The perfect match depends on your lifestyle, living situation, and personal preferences.</p>
-        
-        <h3>Key Factors to Consider</h3>
-        <p>Before choosing a breed, honestly assess these aspects of your life:</p>
-        <ul>
-            <li><strong>Activity Level:</strong> How much exercise can you provide daily?</li>
-            <li><strong>Living Space:</strong> Apartment, house with yard, or farm?</li>
-            <li><strong>Time Commitment:</strong> Hours available for training and companionship</li>
-            <li><strong>Experience Level:</strong> First-time owner or experienced handler?</li>
-            <li><strong>Family Situation:</strong> Children, elderly members, other pets?</li>
-            <li><strong>Grooming Commitment:</strong> How much maintenance are you willing to do?</li>
-        </ul>
-        
-        <h3>High-Energy Breeds (Need 2+ hours daily exercise)</h3>
-        <ul>
-            <li><strong>Border Collie:</strong> Extremely intelligent, needs mental stimulation</li>
-            <li><strong>Australian Cattle Dog:</strong> Loyal, protective, needs job to do</li>
-            <li><strong>Jack Russell Terrier:</strong> Small but mighty, needs consistent exercise</li>
-            <li><strong>Weimaraner:</strong> Athletic, needs running partner</li>
-            <li><strong>Belgian Malinois:</strong> Working dog, needs experienced handler</li>
-        </ul>
-        
-        <h3>Moderate-Energy Breeds (1-2 hours daily exercise)</h3>
-        <ul>
-            <li><strong>Golden Retriever:</strong> Family-friendly, trainable, needs regular exercise</li>
-            <li><strong>Labrador Retriever:</strong> Versatile, good with kids, loves water</li>
-            <li><strong>German Shepherd:</strong> Loyal, intelligent, needs consistent training</li>
-            <li><strong>Boxer:</strong> Playful, good with families, needs socialization</li>
-            <li><strong>Standard Poodle:</strong> Intelligent, hypoallergenic, needs grooming</li>
-        </ul>
-        
-        <h3>Low-Energy Breeds (30 minutes - 1 hour daily exercise)</h3>
-        <ul>
-            <li><strong>Bulldog:</strong> Gentle, good apartment dog, heat sensitive</li>
-            <li><strong>Basset Hound:</strong> Calm, good with kids, can be stubborn</li>
-            <li><strong>Cavalier King Charles Spaniel:</strong> Gentle, adaptable, friendly</li>
-            <li><strong>Pug:</strong> Social, good apartment dog, prone to breathing issues</li>
-            <li><strong>Shih Tzu:</strong> Small, friendly, needs regular grooming</li>
-        </ul>
-        
-        <h3>Apartment-Friendly Breeds</h3>
-        <ul>
-            <li>French Bulldog - quiet, low exercise needs</li>
-            <li>Boston Terrier - small, adaptable</li>
-            <li>Cavalier King Charles Spaniel - gentle, moderate size</li>
-            <li>Pug - social, doesn't bark excessively</li>
-            <li>Bichon Frise - small, friendly, hypoallergenic</li>
-        </ul>
-        
-        <h3>Family Dogs (Good with Children)</h3>
-        <ul>
-            <li>Golden Retriever - patient, gentle, trainable</li>
-            <li>Labrador Retriever - friendly, tolerant</li>
-            <li>Beagle - gentle, sturdy, good size for kids</li>
-            <li>Bulldog - patient, gentle nature</li>
-            <li>Collie - protective, gentle, intelligent</li>
-        </ul>
-        
-        <h3>Low-Maintenance Grooming</h3>
-        <ul>
-            <li>Beagle - short coat, minimal grooming</li>
-            <li>Boston Terrier - smooth coat, easy care</li>
-            <li>Boxer - short coat, occasional brushing</li>
-            <li>Whippet - minimal shedding, easy grooming</li>
-            <li>Jack Russell Terrier - wash and wear coat</li>
-        </ul>
-        
-        <h3>Hypoallergenic Breeds</h3>
-        <ul>
-            <li>Poodle (all sizes) - curly, non-shedding coat</li>
-            <li>Portuguese Water Dog - wavy, minimal shedding</li>
-            <li>Bichon Frise - fluffy but hypoallergenic</li>
-            <li>Maltese - silky, non-shedding coat</li>
-            <li>Chinese Crested - mostly hairless</li>
-        </ul>
-        
-        <h3>First-Time Owner Friendly</h3>
-        <ul>
-            <li>Golden Retriever - forgiving, easy to train</li>
-            <li>Cavalier King Charles Spaniel - gentle, adaptable</li>
-            <li>Bichon Frise - friendly, small, trainable</li>
-            <li>Pug - easy-going, social</li>
-            <li>Labrador Retriever - versatile, eager to please</li>
-        </ul>
-        
-        <h3>Red Flags to Avoid</h3>
-        <ul>
-            <li>Choosing based on appearance alone</li>
-            <li>Getting a high-energy breed for a sedentary lifestyle</li>
-            <li>Ignoring grooming requirements</li>
-            <li>Not researching breed-specific health issues</li>
-            <li>Impulse decisions without proper research</li>
-        </ul>
-        
-        <h3>Questions to Ask Yourself</h3>
-        <ul>
-            <li>Can I commit to daily exercise regardless of weather?</li>
-            <li>Am I prepared for 10-15+ years of responsibility?</li>
-            <li>Do I have time for training and socialization?</li>
-            <li>Can I afford veterinary care and quality food?</li>
-            <li>Is everyone in my household on board with getting a dog?</li>
-        </ul>
-        
-        <h3>Final Recommendations</h3>
-        <p>Take time to research thoroughly, meet dogs of your chosen breed, and consider adopting from shelters or breed-specific rescues. The right match will bring years of joy and companionship.</p>
-        """
+        "file": "blogs/dog_breeds.html"
     },
-    {
-        "id": "pet_emergencies",
+    "pet_emergencies":{
         "title": "How to Handle Pet Emergencies",
         "image": "images/img11.jpg",
         "excerpt": "Knowing how to act in an emergency can save your pet's life...",
-        "content": """
-        <h2>How to Handle Pet Emergencies</h2>
-        <p>Pet emergencies can happen at any time, and knowing how to respond quickly and appropriately can mean the difference between life and death for your beloved companion.</p>
-        
-        <h3>Recognize Emergency Situations</h3>
-        <p>These situations require immediate veterinary attention:</p>
-        <ul>
-            <li><strong>Breathing difficulties:</strong> Gasping, blue gums, excessive panting</li>
-            <li><strong>Unconsciousness:</strong> Not responsive to voice or touch</li>
-            <li><strong>Severe bleeding:</strong> Wounds that won't stop bleeding</li>
-            <li><strong>Seizures:</strong> Convulsions, loss of control</li>
-            <li><strong>Bloat/GDV:</strong> Distended abdomen, retching without vomiting</li>
-            <li><strong>Trauma:</strong> Hit by car, severe falls, animal attacks</li>
-            <li><strong>Poisoning:</strong> Known ingestion of toxic substances</li>
-            <li><strong>Heatstroke:</strong> Excessive panting, drooling, weakness</li>
-        </ul>
-        
-        <h3>Emergency First Aid Basics</h3>
-        <p><strong>For Bleeding:</strong></p>
-        <ul>
-            <li>Apply direct pressure with clean cloth</li>
-            <li>Don't remove embedded objects</li>
-            <li>Elevate the wound if possible</li>
-            <li>Transport to vet immediately</li>
-        </ul>
-        
-        <p><strong>For Choking:</strong></p>
-        <ul>
-            <li>Open mouth and look for visible objects</li>
-            <li>Try to remove with tweezers if visible</li>
-            <li>For small dogs: Hold upside down and give 5 sharp back blows</li>
-            <li>For large dogs: Lift hind legs and give 5 sharp back blows</li>
-            <li>Get to vet immediately even if object is dislodged</li>
-        </ul>
-        
-        <p><strong>For Poisoning:</strong></p>
-        <ul>
-            <li>Contact poison control or emergency vet immediately</li>
-            <li>Never induce vomiting unless specifically instructed</li>
-            <li>Bring the substance container with you</li>
-            <li>Note time of ingestion and amount consumed</li>
-        </ul>
-        
-        <h3>What NOT to Do in Emergencies</h3>
-        <ul>
-            <li>Don't panic - stay calm to help your pet</li>
-            <li>Don't give human medications unless directed by vet</li>
-            <li>Don't induce vomiting unless specifically told to</li>
-            <li>Don't try to treat severe injuries yourself</li>
-            <li>Don't delay seeking professional help</li>
-        </ul>
-        
-        <h3>Emergency Kit Essentials</h3>
-        <p>Keep these items in an easily accessible emergency kit:</p>
-        <ul>
-            <li>Emergency vet and poison control phone numbers</li>
-            <li>Clean towels and gauze pads</li>
-            <li>Medical tape and bandages</li>
-            <li>Digital thermometer (normal temp: 101-102.5°F)</li>
-            <li>Hydrogen peroxide 3% (only use if instructed by vet)</li>
-            <li>Saline solution for flushing wounds</li>
-            <li>Emergency blanket</li>
-            <li>Flashlight</li>
-            <li>Tweezers</li>
-            <li>Current photos of your pet</li>
-        </ul>
-        
-        <h3>Transporting an Injured Pet</h3>
-        <ul>
-            <li>Move carefully to avoid further injury</li>
-            <li>Use a blanket or board as a stretcher for large dogs</li>
-            <li>Small pets can be wrapped in towels</li>
-            <li>Support the head and neck if spinal injury is suspected</li>
-            <li>Have someone call the emergency vet while you travel</li>
-        </ul>
-        
-        <h3>Common Toxic Substances</h3>
-        <p><strong>Foods:</strong> Chocolate, grapes, raisins, onions, garlic, xylitol (artificial sweetener)</p>
-        <p><strong>Plants:</strong> Lilies (cats), azaleas, oleander, sago palm</p>
-        <p><strong>Household items:</strong> Antifreeze, rat poison, cleaning products, medications</p>
-        <p><strong>Other:</strong> Cigarettes, alcohol, caffeine</p>
-        
-        <h3>Heatstroke Prevention and Treatment</h3>
-        <p><strong>Prevention:</strong></p>
-        <ul>
-            <li>Never leave pets in cars</li>
-            <li>Provide shade and water during hot weather</li>
-            <li>Limit exercise during peak heat</li>
-            <li>Watch for early signs: excessive panting, drooling</li>
-        </ul>
-        
-        <p><strong>Treatment:</strong></p>
-        <ul>
-            <li>Move to cool, shaded area immediately</li>
-            <li>Apply cool (not ice cold) water to paws and belly</li>
-            <li>Offer small amounts of cool water</li>
-            <li>Get to emergency vet immediately</li>
-        </ul>
-        
-        <h3>Preparing for Emergencies</h3>
-        <ul>
-            <li>Locate nearest 24-hour emergency vet clinic</li>
-            <li>Save emergency numbers in your phone</li>
-            <li>Know the route to the emergency clinic</li>
-            <li>Keep a spare leash and carrier accessible</li>
-            <li>Ensure your pet's ID tags and microchip info are current</li>
-            <li>Take a pet first aid class</li>
-        </ul>
-        
-        <h3>Important Emergency Contacts</h3>
-        <ul>
-            <li>Your regular veterinarian</li>
-            <li>Nearest 24-hour emergency animal hospital</li>
-            <li>ASPCA Animal Poison Control: (888) 426-4435</li>
-            <li>Pet Poison Helpline: (855) 764-7661</li>
-        </ul>
-        
-        <h3>After the Emergency</h3>
-        <ul>
-            <li>Follow up with your regular vet as directed</li>
-            <li>Monitor your pet closely during recovery</li>
-            <li>Keep emergency clinic records for your regular vet</li>
-            <li>Review what happened to prevent future occurrences</li>
-            <li>Replenish your emergency kit supplies</li>
-        </ul>
-        
-        <h3>Remember</h3>
-        <p>Time is critical in pet emergencies. When in doubt, contact a veterinary professional immediately. It's always better to err on the side of caution when your pet's life may be at stake.</p>
-        """
+        "file": "blogs/pet_emergencies.html"
     }
-]
+}
+
 
 # Complete services_data dictionary for app.py
 services_data = {
@@ -713,337 +85,55 @@ services_data = {
         "title": "Pet Vaccination Services",
         "image": "imgs1.png",
         "description": "Comprehensive vaccination services for your pets at home",
-        "content": """
-        <h2>Professional Pet Vaccination at Your Doorstep</h2>
-        <p>Our experienced veterinarians provide complete vaccination services in the comfort of your home, eliminating the stress of clinic visits for both you and your pet.</p>
-        
-        <h3>Core Vaccinations We Provide:</h3>
-        <ul>
-            <li><strong>Dogs:</strong> DHPP (Distemper, Hepatitis, Parvovirus, Parainfluenza), Rabies</li>
-            <li><strong>Cats:</strong> FVRCP (Feline Viral Rhinotracheitis, Calicivirus, Panleukopenia), Rabies</li>
-        </ul>
-        
-        <h3>Non-Core Vaccinations:</h3>
-        <ul>
-            <li>Lyme Disease</li>
-            <li>Kennel Cough</li>
-            <li>Feline Leukemia</li>
-        </ul>
-        
-        <h3>Benefits of Home Vaccination:</h3>
-        <ul>
-            <li>Reduced stress for your pet</li>
-            <li>No exposure to sick animals</li>
-            <li>Convenient scheduling</li>
-            <li>Personalized care and attention</li>
-        </ul>
-        
-        <h3>Vaccination Schedule:</h3>
-        <p>We follow the latest veterinary guidelines to ensure your pet receives vaccines at the optimal times for maximum protection.</p>
-        
-        """
+        "file": "services/vaccination.html"
     },
     "general_treatment": {
         "title": "General Pet Treatment",
         "image": "imgs2.jpg",
         "description": "Comprehensive general treatment services for all your pet's health needs",
-        "content": """
-        <h2>Comprehensive General Treatment Services</h2>
-        <p>Our skilled veterinarians provide a wide range of general treatment services at your home, ensuring your pet receives professional care without the stress of traveling to a clinic.</p>
-        
-        <h3>Services We Provide:</h3>
-        <ul>
-            <li>Health examinations and consultations</li>
-            <li>Wound care and bandaging</li>
-            <li>Skin condition treatment</li>
-            <li>Eye and ear infections</li>
-            <li>Digestive issues</li>
-            <li>Minor surgical procedures</li>
-        </ul>
-        
-        <h3>When to Seek Treatment:</h3>
-        <ul>
-            <li>Changes in eating or drinking habits</li>
-            <li>Lethargy or unusual behavior</li>
-            <li>Vomiting or diarrhea</li>
-            <li>Difficulty breathing</li>
-            <li>Skin irritation or allergies</li>
-        </ul>
-        
-        <h3>Our Approach:</h3>
-        <p>We believe in thorough examinations and clear communication with pet owners. Our veterinarians will explain the diagnosis, treatment options, and provide detailed care instructions.</p>
-        """
+        "file": "services/general_treatment.html"
     },
     "deworming": {
         "title": "Pet Deworming Services",
         "image": "imgs3.jpg",
         "description": "Professional deworming services with fecal analysis",
-        "content": """
-        <h2>Professional Deworming Services</h2>
-        <p>Keep your pets healthy and parasite-free with our comprehensive deworming services, including fecal analysis and targeted treatment.</p>
-        
-        <h3>Why Deworming is Important:</h3>
-        <ul>
-            <li>Prevents intestinal parasites</li>
-            <li>Protects family health</li>
-            <li>Improves pet's overall well-being</li>
-            <li>Prevents weight loss and malnutrition</li>
-        </ul>
-        
-        <h3>Our Process:</h3>
-        <ol>
-            <li><strong>Fecal Analysis:</strong> We examine your pet's stool sample to identify specific parasites</li>
-            <li><strong>Targeted Treatment:</strong> Based on results, we provide appropriate deworming medication</li>
-            <li><strong>Follow-up:</strong> We schedule follow-up visits to ensure treatment effectiveness</li>
-        </ol>
-        
-        <h3>Common Parasites We Treat:</h3>
-        <ul>
-            <li>Roundworms</li>
-            <li>Hookworms</li>
-            <li>Tapeworms</li>
-            <li>Whipworms</li>
-            <li>Giardia</li>
-        </ul>
-        
-        <h3>Deworming Schedule:</h3>
-        <p>We recommend regular deworming based on your pet's age, lifestyle, and risk factors. Puppies and kittens require more frequent treatment than adult pets.</p>
-        """
+        "file": "services/deworming.html"
     },
     "grooming": {
         "title": "Pet Grooming Services",
         "image": "imgs4.jpg",
         "description": "Professional grooming services in the comfort of your home",
-        "content": """
-        <h2>Professional Pet Grooming at Home</h2>
-        <p>Our expert groomers bring professional grooming services directly to your door, ensuring your pet looks and feels their best in a familiar, stress-free environment.</p>
-        
-        <h3>Grooming Services Include:</h3>
-        <ul>
-            <li>Full bath with premium shampoo</li>
-            <li>Hair trimming and styling</li>
-            <li>Nail trimming and filing</li>
-            <li>Ear cleaning</li>
-            <li>Teeth brushing</li>
-            <li>Flea and tick treatment</li>
-        </ul>
-        
-        <h3>Benefits of Home Grooming:</h3>
-        <ul>
-            <li>Familiar environment reduces anxiety</li>
-            <li>One-on-one attention</li>
-            <li>No travel stress</li>
-            <li>Flexible scheduling</li>
-            <li>Personalized grooming approach</li>
-        </ul>
-        
-        <h3>Grooming Packages:</h3>
-        <ul>
-            <li><strong>Basic Package:</strong> Bath, dry, nail trim</li>
-            <li><strong>Standard Package:</strong> Bath, dry, nail trim, ear cleaning</li>
-            <li><strong>Premium Package:</strong> Full service including styling and teeth cleaning</li>
-        </ul>
-        
-        <h3>Suitable for All Breeds:</h3>
-        <p>Our groomers are experienced with all dog and cat breeds, understanding the specific needs and grooming requirements of each.</p>
-        """
+        "file": "services/grooming.html"
     },
     "nail_trimming": {
         "title": "Professional Nail Trimming",
         "image": "nail.jpeg",
         "description": "Expert nail care to keep your pet comfortable and healthy",
-        "content": """
-        <h2>Professional Nail Trimming Services</h2>
-        <p>Regular nail trimming is essential for your pet's comfort and health. Our experienced professionals provide safe and stress-free nail care at your home.</p>
-        
-        <h3>Why Regular Nail Trimming is Important:</h3>
-        <ul>
-            <li>Prevents overgrowth and cracking</li>
-            <li>Reduces risk of injury</li>
-            <li>Improves walking comfort</li>
-            <li>Prevents damage to furniture</li>
-            <li>Maintains proper paw health</li>
-        </ul>
-        
-        <h3>Our Nail Care Process:</h3>
-        <ol>
-            <li><strong>Assessment:</strong> We examine your pet's nails and paws</li>
-            <li><strong>Gentle Handling:</strong> Calming techniques to keep pets relaxed</li>
-            <li><strong>Professional Trimming:</strong> Using proper tools and techniques</li>
-            <li><strong>Filing:</strong> Smooth finishing for comfort</li>
-        </ol>
-        
-        <h3>Signs Your Pet Needs Nail Trimming:</h3>
-        <ul>
-            <li>Clicking sounds when walking</li>
-            <li>Nails touching the ground</li>
-            <li>Scratching furniture or people</li>
-            <li>Difficulty walking</li>
-        </ul>
-        
-        <h3>Frequency Recommendations:</h3>
-        <p>Most pets need nail trimming every 3-4 weeks, but this can vary based on activity level and nail growth rate.</p>
-        """
+        "file": "services/nail_trimming.html"
     },
     "dental_care": {
         "title": "Pet Dental Care",
         "image": "imgs6.jpg",
         "description": "Comprehensive dental health services for your pet",
-        "content": """
-        <h2>Professional Pet Dental Care</h2>
-        <p>Dental health is crucial for your pet's overall well-being. Our comprehensive dental care services help prevent disease and maintain oral hygiene.</p>
-        
-        <h3>Dental Services We Provide:</h3>
-        <ul>
-            <li>Dental examinations</li>
-            <li>Professional teeth cleaning</li>
-            <li>Tartar and plaque removal</li>
-            <li>Oral health assessment</li>
-            <li>Dental X-rays (when needed)</li>
-            <li>Treatment of dental diseases</li>
-        </ul>
-        
-        <h3>Signs of Dental Problems:</h3>
-        <ul>
-            <li>Bad breath</li>
-            <li>Yellow or brown tartar buildup</li>
-            <li>Red or swollen gums</li>
-            <li>Difficulty eating</li>
-            <li>Pawing at the face</li>
-            <li>Loose or missing teeth</li>
-        </ul>
-        
-        <h3>Prevention Tips:</h3>
-        <ul>
-            <li>Regular brushing at home</li>
-            <li>Dental treats and toys</li>
-            <li>Professional cleanings</li>
-            <li>Regular dental checkups</li>
-        </ul>
-        
-        <h3>Age-Specific Care:</h3>
-        <p>Puppies and kittens need different dental care than adult and senior pets. We provide age-appropriate dental services.</p>
-        """
+        "file": "services/dental_care.html"
     },
     "pet_xray": {
         "title": "Mobile Pet X-Ray Services",
         "image": "imgs7.jpg",
         "description": "Advanced diagnostic imaging at your doorstep",
-        "content": """
-        <h2>Advanced Mobile X-Ray Services</h2>
-        <p>Our state-of-the-art mobile X-ray equipment brings advanced diagnostic capabilities directly to your home, providing accurate imaging without the stress of clinic visits.</p>
-        
-        <h3>When X-Rays Are Needed:</h3>
-        <ul>
-            <li>Suspected fractures or injuries</li>
-            <li>Digestive blockages</li>
-            <li>Joint problems</li>
-            <li>Chest conditions</li>
-            <li>Abdominal issues</li>
-            <li>Pre-surgical planning</li>
-        </ul>
-        
-        <h3>Our X-Ray Services:</h3>
-        <ul>
-            <li>Digital X-ray imaging</li>
-            <li>Immediate image review</li>
-            <li>Professional interpretation</li>
-            <li>Treatment recommendations</li>
-            <li>Referral coordination when needed</li>
-        </ul>
-        
-        <h3>Benefits of Mobile X-Ray:</h3>
-        <ul>
-            <li>No transportation stress</li>
-            <li>Familiar environment for your pet</li>
-            <li>Immediate results</li>
-            <li>Convenient scheduling</li>
-            <li>Professional equipment</li>
-        </ul>
-        
-        <h3>Safety Standards:</h3>
-        <p>We follow strict radiation safety protocols to ensure the safety of your pet, your family, and our staff during all X-ray procedures.</p>
-        """
+        "file": "services/pet_xray.html"
     },
     "emergency_care": {
         "title": "24/7 Emergency Pet Care",
         "image": "imgs8.jpg",
         "description": "Immediate veterinary response for urgent situations",
-        "content": """
-        <h2>24/7 Emergency Veterinary Services</h2>
-        <p>When your pet faces a medical emergency, every second counts. Our emergency response team is available around the clock to provide immediate care.</p>
-        
-        <h3>Emergency Situations We Handle:</h3>
-        <ul>
-            <li>Trauma and accidents</li>
-            <li>Difficulty breathing</li>
-            <li>Seizures</li>
-            <li>Poisoning</li>
-            <li>Severe bleeding</li>
-            <li>Collapse or unconsciousness</li>
-            <li>Severe pain</li>
-        </ul>
-        
-        <h3>Our Emergency Response:</h3>
-        <ol>
-            <li><strong>Immediate Assessment:</strong> Quick phone triage</li>
-            <li><strong>Rapid Deployment:</strong> Emergency team dispatch</li>
-            <li><strong>On-Site Stabilization:</strong> Immediate care</li>
-            <li><strong>Treatment Plan:</strong> Comprehensive emergency care</li>
-            <li><strong>Follow-up:</strong> Continued monitoring</li>
-        </ol>
-        
-        <h3>Emergency Equipment:</h3>
-        <ul>
-            <li>Portable oxygen</li>
-            <li>Emergency medications</li>
-            <li>IV fluids and equipment</li>
-            <li>Monitoring devices</li>
-            <li>Emergency surgical tools</li>
-        </ul>
-        
-        <h3>When to Call Emergency Services:</h3>
-        <p>If you're unsure whether your pet's condition is an emergency, call us immediately. It's better to be safe and get professional advice.</p>
-        """
+        "file": "services/emergency_care.html"
     },
     "nutrition_guidance": {
         "title": "Pet Nutrition Consultation",
         "image": "imgs9.jpg",
         "description": "Personalized nutrition plans for optimal pet health",
-        "content": """
-        <h2>Professional Pet Nutrition Guidance</h2>
-        <p>Proper nutrition is the foundation of good health. Our veterinary nutritionists create personalized feeding plans tailored to your pet's specific needs.</p>
-        
-        <h3>Nutrition Services We Provide:</h3>
-        <ul>
-            <li>Comprehensive nutritional assessment</li>
-            <li>Customized diet plans</li>
-            <li>Weight management programs</li>
-            <li>Food allergy testing</li>
-            <li>Supplement recommendations</li>
-            <li>Feeding behavior consultation</li>
-        </ul>
-        
-        <h3>Life Stage Nutrition:</h3>
-        <ul>
-            <li><strong>Puppy/Kitten:</strong> Growth and development nutrition</li>
-            <li><strong>Adult:</strong> Maintenance and activity-based diets</li>
-            <li><strong>Senior:</strong> Age-appropriate nutrition</li>
-            <li><strong>Pregnant/Nursing:</strong> Special nutritional needs</li>
-        </ul>
-        
-        <h3>Special Dietary Needs:</h3>
-        <ul>
-            <li>Weight management</li>
-            <li>Food allergies and sensitivities</li>
-            <li>Diabetes management</li>
-            <li>Kidney disease diets</li>
-            <li>Digestive disorders</li>
-        </ul>
-        
-        <h3>Our Approach:</h3>
-        <p>We consider your pet's age, breed, activity level, health conditions, and preferences to create a nutrition plan that promotes optimal health and longevity.</p>
-        """
+        "file": "services/nutrition_guidance.html"
     }
 }
 
@@ -1062,26 +152,32 @@ def gallery():
 def blogs():
     return render_template('blogs.html', blogs=blogs_data)
 
-# Individual blog pages
+
 @app.route('/blog/<blog_id>')
 def blog_detail(blog_id):
-    blog = next((b for b in blogs_data if b['id'] == blog_id), None)
+    blog = blogs_data.get(blog_id)
     if not blog:
-        return "Blog not found", 404
-    return render_template('blog_detail.html', blog=blog)
+        abort(404)
+    return render_template(
+        blog["file"], 
+        blog=blog
+    )
 
 # Services page
 @app.route('/services')
 def services():
     return render_template('services.html')
 
-# Individual service pages
 @app.route('/service/<service_id>')
 def service_detail(service_id):
     service = services_data.get(service_id)
     if not service:
-        return "Service not found", 404
-    return render_template('service_detail.html', service=service)
+        abort(404)
+    return render_template(
+        service["file"], 
+        service=service
+    )
+
 
 # About page
 @app.route('/about')
@@ -1093,8 +189,6 @@ def about():
 def contact():
     return render_template('contact.html')
 
-
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
-
