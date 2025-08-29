@@ -9,6 +9,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 
     <!-- AOS Animations -->
@@ -36,6 +41,7 @@
                 <li><a href="{{ url_for('services') }}" class="hover:text-yellow-300">Services</a></li>
                 <li><a href="{{ url_for('about') }}" class="hover:text-yellow-300">About</a></li>
                 <li><a href="{{ url_for('contact') }}" class="hover:text-yellow-300">Contact</a></li>
+                <li><a href="{{ url_for('admin_login') }}" class="hover:text-yellow-300">Admin</a></li>
             </ul>
             <!-- Mobile menu toggle -->
             <div id="menu-toggle" class="md:hidden text-2xl cursor-pointer">☰</div>
@@ -48,6 +54,7 @@
         <li><a href="{{ url_for('services') }}" class="block p-2 hover:bg-green-600">Services</a></li>
         <li><a href="{{ url_for('about') }}" class="block p-2 hover:bg-green-600">About</a></li>
         <li><a href="{{ url_for('contact') }}" class="block p-2 hover:bg-green-600">Contact</a></li>
+        <li><a href="{{ url_for('admin_login') }}" class="block p-2 hover:bg-green-600">Admin</a></li>
     </ul>
 </header>
 <!-- Desktop Call Bar (hidden on mobile) -->
@@ -76,11 +83,11 @@
 </div>
 
 <!-- Floating Call Button (mobile only) -->
-<!-- <a href="tel:+918208657969" 
+ <a href="tel:+918208657969" 
    class="md:hidden fixed bottom-6 right-6 bg-green-600 text-white rounded-full shadow-lg 
           p-4 animate-bounce hover:bg-green-700 transition duration-300 z-50">
   <i class="fas fa-phone-alt text-2xl"></i>
-</a> -->
+</a> 
 
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
@@ -173,4 +180,3 @@
 
 </body>
 </html>
-
