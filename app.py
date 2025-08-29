@@ -20,11 +20,11 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 db_config = {
-    "host": "localhost",
-    "user": "root",
-    "password": "Malluk@123",
-    "database": "mrigaayuvets",
-    "auth_plugin": "mysql_native_password"
+    "host": os.getenv("DB_HOST"),
+    "port": int(os.getenv("DB_PORT", 3306)),
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASSWORD"),
+    "database": os.getenv("DB_NAME"),
 }
 
 def allowed_file(filename):
@@ -828,3 +828,4 @@ if __name__ == "__main__":
     init_admin_database()
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=True)
+
