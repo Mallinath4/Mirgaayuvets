@@ -21,11 +21,11 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 
 db_config = {
-    "host": os.getenv("DB_HOST", "localhost"),
-    "port": int(os.getenv("DB_PORT", 3306)),
+    "host": os.getenv("DB_HOST", "shinkansen.proxy.rlwy.net"),
+    "port": int(os.getenv("DB_PORT", 46997)),
     "user": os.getenv("DB_USER", "root"),
-    "password": os.getenv("DB_PASSWORD", ""),
-    "database": os.getenv("DB_NAME", "test"),
+    "password": os.getenv("DB_PASSWORD", "LdVVDNkBmbISPZWFDRvMcRTdDQnMzzJO"),
+    "database": os.getenv("DB_NAME", "railway"),
 }
 
 def get_db_connection():
@@ -831,6 +831,7 @@ if __name__ == "__main__":
     init_admin_database()
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=True)
+
 
 
 
