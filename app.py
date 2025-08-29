@@ -19,14 +19,17 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 # Make sure upload folder exists
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-conn = mysql.connector.connect(
-    host=os.getenv("DB_HOST"),
-    user=os.getenv("DB_USER"),
-    password=os.getenv("DB_PASSWORD"),
-    database=os.getenv("DB_NAME"),
-    port=int(os.getenv("DB_PORT", 3306))
-)
 
+db_config = {
+    "host": os.getenv("DB_HOST", "localhost"),
+    "port": int(os.getenv("DB_PORT", 3306)),
+    "user": os.getenv("DB_USER", "root"),
+    "password": os.getenv("DB_PASSWORD", ""),
+    "database": os.getenv("DB_NAME", "test"),
+}
+
+def get_db_connection():
+    return mysql.connector.connect(**db_config)
 def allowed_file(filename):
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
@@ -828,5 +831,6 @@ if __name__ == "__main__":
     init_admin_database()
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=True)
+
 
 
